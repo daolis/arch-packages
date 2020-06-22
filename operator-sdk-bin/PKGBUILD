@@ -1,0 +1,31 @@
+# Maintainer: Stephan Bechter <daolis@apogeum.at
+pkgname=operator-sdk-bin
+pkgver=0.18.1
+pkgrel=1
+epoch=
+pkgdesc="SDK for building Kubernetes applications. Provides high level APIs, useful abstractions, and project scaffolding."
+arch=("x86_64")
+url=""
+license=('Apache 2.0')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("https://github.com/operator-framework/operator-sdk/releases/download/v${pkgver}/operator-sdk-v${pkgver}-x86_64-linux-gnu")
+noextract=()
+sha256sums=("ec540aaffa9f304c574437cba74dc2d58b2151ad6771e7ac294849c0982509e8")
+validpgpkeys=()
+
+package() {
+          mkdir -p $pkgdir/usr/bin
+          cp ./operator-sdk-v${pkgver}-x86_64-linux-gnu $pkgdir/usr/bin/operator-sdk
+          chmod 755 $pkgdir/usr/bin/operator-sdk
+}
